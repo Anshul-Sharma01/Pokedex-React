@@ -37,9 +37,8 @@ function PokeList(){
 
     return(
         <div className="m-auto flex flex-col items-center">
-            <h1 className="text-2xl font-bold mb-4">PokeList</h1>
             <div className="flex flex-row justify-center  items-center flex-wrap gap-20 md:grid-cols-2 lg:grid-cols-3">
-                {isLoading ? <Loader/> : pokemonList.map((p) => <Pokemon name={p.name} image={p.image} key={p.id}/>)}
+                {isLoading ? <Loader/> : pokemonList.map((p) => <Pokemon name={p.name} image={p.image} key={p.id} id={p.id}/>)}
             </div>
             <div className=" flex gap-10 p-10 m-5">
                 
