@@ -3,13 +3,13 @@ import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import usePokemonDetails from "../../hooks/usePokemonDetails";
 
-function PokemonDetails() {
+function PokemonDetails({pokemonName}) {
     const { id } = useParams();
-    const [loading, pokemon, pokemonListState] = usePokemonDetails(id);
+    const [loading, pokemon, pokemonListState] = usePokemonDetails(id, pokemonName);
 
     return (
         <div className="flex justify-center items-center">
-            <div className="w-2/5 border-solid border-2 rounded-lg p-10 shadow-slate-300 shadow-lg hover:cursor-pointer hover:bg-slate-200">
+            <div className="w-3/5 border-solid border-2 rounded-lg p-10 shadow-slate-300 shadow-lg hover:cursor-pointer hover:bg-slate-200">
                 {loading ? <Loader /> : (
                     <div className="flex flex-col justify-center items-center gap-2">
                         <h2 className="text-2xl font-mono capitalize text-center p-6 bg-slate-400 text-white font-bold rounded-lg">{pokemon.name}</h2>
